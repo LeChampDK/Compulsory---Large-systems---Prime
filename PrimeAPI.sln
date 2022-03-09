@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeAPI-1", "PrimeAPI-1\PrimeAPI-1.csproj", "{0CDF35E5-4AF9-43B4-9C67-519A46CF3CCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeLoadBalancer", "PrimeLoadBalancer\PrimeLoadBalancer.csproj", "{27E7FFC7-CEB1-478F-9BE3-43D6366BCACE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CDF35E5-4AF9-43B4-9C67-519A46CF3CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CDF35E5-4AF9-43B4-9C67-519A46CF3CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CDF35E5-4AF9-43B4-9C67-519A46CF3CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CDF35E5-4AF9-43B4-9C67-519A46CF3CCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27E7FFC7-CEB1-478F-9BE3-43D6366BCACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27E7FFC7-CEB1-478F-9BE3-43D6366BCACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27E7FFC7-CEB1-478F-9BE3-43D6366BCACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27E7FFC7-CEB1-478F-9BE3-43D6366BCACE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DD2FFA7C-FB09-45E0-9D0A-7BB6DFF817E3}
+	EndGlobalSection
+EndGlobal
