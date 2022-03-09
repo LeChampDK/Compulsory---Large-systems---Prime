@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PrimeAPI_1.Model;
 using PrimeAPI_1.Service;
+using System;
 using System.Net.Http;
 
 namespace PrimeAPI_1.Controllers
@@ -16,9 +18,9 @@ namespace PrimeAPI_1.Controllers
 
         // POST: LoadBalancerController/Create
         [HttpPost("IsItPrime")]
-        public ActionResult<HttpResponseMessage> IsItPrime([FromBody]string primeNumber)
+        public ActionResult<HttpResponseMessage> IsItPrime([FromBody]PrimeNumber primeNumber)
         {
-            var result = _primeService.IsPrime(primeNumber);
+            var result = _primeService.IsPrime(primeNumber.Number);
 
             return Ok(result);
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\renej\\source\\repos\\PrimeAPI\\PrimeLoadBalancer\\PrimeLoadBalancer.csproj": {}
+    "C:\\Skole\\Software Developer\\Development of Large systems\\Compulsory - Large systems - Prime\\Compulsory---Large-systems---Prime\\PrimeLoadBalancer\\PrimeLoadBalancer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\renej\\source\\repos\\PrimeAPI\\PrimeLoadBalancer\\PrimeLoadBalancer.csproj": {
+    "C:\\Skole\\Software Developer\\Development of Large systems\\Compulsory - Large systems - Prime\\Compulsory---Large-systems---Prime\\PrimeLoadBalancer\\PrimeLoadBalancer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\renej\\source\\repos\\PrimeAPI\\PrimeLoadBalancer\\PrimeLoadBalancer.csproj",
+        "projectUniqueName": "C:\\Skole\\Software Developer\\Development of Large systems\\Compulsory - Large systems - Prime\\Compulsory---Large-systems---Prime\\PrimeLoadBalancer\\PrimeLoadBalancer.csproj",
         "projectName": "PrimeLoadBalancer",
-        "projectPath": "C:\\Users\\renej\\source\\repos\\PrimeAPI\\PrimeLoadBalancer\\PrimeLoadBalancer.csproj",
+        "projectPath": "C:\\Skole\\Software Developer\\Development of Large systems\\Compulsory - Large systems - Prime\\Compulsory---Large-systems---Prime\\PrimeLoadBalancer\\PrimeLoadBalancer.csproj",
         "packagesPath": "C:\\Users\\renej\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\renej\\source\\repos\\PrimeAPI\\PrimeLoadBalancer\\obj\\",
+        "outputPath": "C:\\Skole\\Software Developer\\Development of Large systems\\Compulsory - Large systems - Prime\\Compulsory---Large-systems---Prime\\PrimeLoadBalancer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
