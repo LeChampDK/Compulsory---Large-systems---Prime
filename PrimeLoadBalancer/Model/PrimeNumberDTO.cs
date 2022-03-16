@@ -1,4 +1,4 @@
-﻿namespace PrimeAPI_1.Model
+﻿namespace PrimeLoadBalancer.Model
 {
     public class PrimeNumberDTO
     {

@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using PrimeLoadBalancer.Model;
 
 namespace PrimeLoadBalancer.Service
 {
@@ -18,14 +19,17 @@ namespace PrimeLoadBalancer.Service
             httpClient = new HttpClient();
         }
 
-        public Task<HttpResponseMessage> IsPrime(string primeNumber)
+        public async Task<string> IsPrime(PrimeNumberDTO primeNumber)
         {
             var connString = giveMeConfig();
             connString = connString + "IsItPrime/";
-            var body = JsonConvert.SerializeObject(primeNumber);
-            var request = new StringContent(body, Encoding.UTF8, "application/json") ;
-            var result = httpClient.PostAsync(connString, request);
-            
+            var request = new StringContent(JsonConvert.SerializeObject(primeNumber), Encoding.UTF8, "application/json");
+            //var request = new StringContent(primeNumber.ToString());
+            var response = await httpClient.PostAsync(connString, request);
+            var responseContent = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<string>(responseContent);
+
+            //return responseContent;
             return result;
         }
 

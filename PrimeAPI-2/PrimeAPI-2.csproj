@@ -2,9 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>PrimeAPI_1</RootNamespace>
-    <UserSecretsId>19528ea0-c72b-4c5c-8972-b64146b42b32</UserSecretsId>
-    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <RootNamespace>PrimeAPI_2</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PrimeLoadBalancer\PrimeLoadBalancer.csproj" />
   </ItemGroup>
 
 </Project>

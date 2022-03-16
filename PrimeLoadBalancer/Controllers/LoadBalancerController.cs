@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using PrimeAPI_1.Model;
+﻿using Microsoft.AspNetCore.Mvc;
+using PrimeLoadBalancer.Model;
 using PrimeLoadBalancer.Service;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -20,20 +20,20 @@ namespace PrimeLoadBalancer.Controllers
 
         // POST: LoadBalancerController/Create
         [HttpPost("IsPrime")]
-        public ActionResult<HttpResponseMessage> IsPrime(PrimeNumberDTO primeNumber)
+        public async Task<ActionResult<string>> IsPrimeAsync(PrimeNumberDTO primeNumber)
         {
-            var result = _loadBalancerService.IsPrime(primeNumber.Number);
+            var result = await _loadBalancerService.IsPrime(primeNumber);
             
             return Ok(result);
         }
 
         // POST: LoadBalancerController/Create
         [HttpPost("CountPrimes")]
-        public ActionResult<HttpResponseMessage> CountPrimes([FromBody] PrimeNumbersDTO primeNumber)
+        public async Task<ActionResult<List<string>>> CountPrimesAsync([FromBody] PrimeNumbersDTO primeNumber)
         {
             var startNumber = primeNumber.StartNumber;
             var endNumber = primeNumber.EndNumber; 
-            var result = _loadBalancerService.CountPrimes(startNumber, endNumber);
+            var result = await _loadBalancerService.CountPrimes(startNumber, endNumber);
 
             return Ok(result);
         }
