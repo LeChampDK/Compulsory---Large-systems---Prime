@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using PrimeAPI_1.Model;
 using PrimeAPI_1.Service;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 
 namespace PrimeAPI_1.Controllers
@@ -20,7 +21,7 @@ namespace PrimeAPI_1.Controllers
 
         // POST: LoadBalancerController/Create
         [HttpPost("IsItPrime")]
-        public ActionResult<HttpResponseMessage> IsItPrime([FromBody] PrimeNumber primeNumber)
+        public ActionResult<bool> IsItPrime([FromBody] PrimeNumber primeNumber)
         {
             var result = _primeService.IsPrime(primeNumber.Number);
 
@@ -29,7 +30,7 @@ namespace PrimeAPI_1.Controllers
 
         // POST: LoadBalancerController/Create
         [HttpPost("CountPrimes")]
-        public ActionResult<HttpResponseMessage> CountPrimes([FromBody] PrimeNumbers primeNumbers)
+        public ActionResult<List<string>> CountPrimes([FromBody] PrimeNumbers primeNumbers)
         {
             var startNumber = primeNumbers.StartNumber;
             var endNumber = primeNumbers.EndNumber;

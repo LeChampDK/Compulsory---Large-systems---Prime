@@ -8,11 +8,11 @@ namespace PrimeLoadBalancer.Service
 {
     public class LoadBalancerService
     {
-        private readonly Config _config;
+        private readonly ConfigService _config;
         private readonly HttpClient httpClient;
         private int switcharoo = 1;
 
-        public LoadBalancerService(Config config)
+        public LoadBalancerService(ConfigService config)
         {
             _config = config;
             httpClient = new HttpClient();
@@ -21,6 +21,7 @@ namespace PrimeLoadBalancer.Service
         public Task<HttpResponseMessage> IsPrime(string primeNumber)
         {
             var connString = giveMeConfig();
+            connString = connString + "IsItPrime/";
             var body = JsonConvert.SerializeObject(primeNumber);
             var request = new StringContent(body, Encoding.UTF8, "application/json") ;
             var result = httpClient.PostAsync(connString, request);
@@ -31,6 +32,7 @@ namespace PrimeLoadBalancer.Service
         public Task<HttpResponseMessage> CountPrimes(string startPrime, string endPrime)
         {
             var connString = giveMeConfig();
+            connString = connString + "CountPrimes/";
             var prebody = new
             {
                 startPrime = startPrime,
