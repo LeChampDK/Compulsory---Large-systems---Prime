@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeAPI-1", "PrimeAPI-1\PrimeAPI-1.csproj", "{0CDF35E5-4AF9-43B4-9C67-519A46CF3CCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimeAPI-1", "PrimeAPI-1\PrimeAPI-1.csproj", "{0CDF35E5-4AF9-43B4-9C67-519A46CF3CCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeLoadBalancer", "PrimeLoadBalancer\PrimeLoadBalancer.csproj", "{27E7FFC7-CEB1-478F-9BE3-43D6366BCACE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimeLoadBalancer", "PrimeLoadBalancer\PrimeLoadBalancer.csproj", "{27E7FFC7-CEB1-478F-9BE3-43D6366BCACE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimeAPI-2", "PrimeAPI-2\PrimeAPI-2.csproj", "{305A310C-BC00-4956-B083-5E2E157DF72F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{27E7FFC7-CEB1-478F-9BE3-43D6366BCACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27E7FFC7-CEB1-478F-9BE3-43D6366BCACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27E7FFC7-CEB1-478F-9BE3-43D6366BCACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{305A310C-BC00-4956-B083-5E2E157DF72F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{305A310C-BC00-4956-B083-5E2E157DF72F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{305A310C-BC00-4956-B083-5E2E157DF72F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{305A310C-BC00-4956-B083-5E2E157DF72F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

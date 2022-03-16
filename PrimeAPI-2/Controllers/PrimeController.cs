@@ -1,14 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using PrimeAPI_1.Model;
-using PrimeAPI_1.Service;
-using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using PrimeAPI_2.Model;
+using PrimeAPI_2.Service;
 using System.Net.Http;
 
-namespace PrimeAPI_1.Controllers
+namespace PrimeAPI_2.Controllers
 {
     [ApiController]
-    [Route("PrimeCalc1")]
+    [Route("PrimeCalc2")]
     public class PrimeController : Controller
     {
         private readonly PrimeService _primeService;
@@ -18,7 +16,6 @@ namespace PrimeAPI_1.Controllers
             _primeService = primeService;
         }
 
-        // POST: LoadBalancerController/Create
         [HttpPost("IsItPrime")]
         public ActionResult<HttpResponseMessage> IsItPrime([FromBody] PrimeNumber primeNumber)
         {
@@ -27,7 +24,6 @@ namespace PrimeAPI_1.Controllers
             return Ok(result);
         }
 
-        // POST: LoadBalancerController/Create
         [HttpPost("CountPrimes")]
         public ActionResult<HttpResponseMessage> CountPrimes([FromBody] PrimeNumbers primeNumbers)
         {
