@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace PrimeLoadBalancer.Service
             httpClient = new HttpClient();
         }
 
-        public async Task<string> IsPrime(PrimeNumberDTO primeNumber)
+        public async Task<bool> IsPrime(PrimeNumberDTO primeNumber)
         {
             var connString = giveMeConfig();
             connString = connString + "IsItPrime/";
@@ -27,24 +28,20 @@ namespace PrimeLoadBalancer.Service
             //var request = new StringContent(primeNumber.ToString());
             var response = await httpClient.PostAsync(connString, request);
             var responseContent = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<string>(responseContent);
+            var result = JsonConvert.DeserializeObject<bool>(responseContent);
 
             //return responseContent;
             return result;
         }
 
-        public Task<HttpResponseMessage> CountPrimes(string startPrime, string endPrime)
+        public async Task<List<string>> CountPrimes(PrimeNumbersDTO primeNumbers)
         {
             var connString = giveMeConfig();
             connString = connString + "CountPrimes/";
-            var prebody = new
-            {
-                startPrime = startPrime,
-                endPrime = endPrime
-            };
-            var body = JsonConvert.SerializeObject(prebody);
-            var request = new StringContent(body, Encoding.UTF8, "application/json");
-            var result = httpClient.PostAsync(connString, request);
+            var request = new StringContent(JsonConvert.SerializeObject(primeNumbers), Encoding.UTF8, "application/json");
+            var response = await httpClient.PostAsync(connString, request);
+            var responseContent = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<List<string>>(responseContent);
 
             return result;
         }

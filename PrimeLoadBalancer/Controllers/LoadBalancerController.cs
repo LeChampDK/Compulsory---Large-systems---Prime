@@ -20,7 +20,7 @@ namespace PrimeLoadBalancer.Controllers
 
         // POST: LoadBalancerController/Create
         [HttpPost("IsPrime")]
-        public async Task<ActionResult<string>> IsPrimeAsync(PrimeNumberDTO primeNumber)
+        public async Task<ActionResult<bool>> IsPrimeAsync(PrimeNumberDTO primeNumber)
         {
             var result = await _loadBalancerService.IsPrime(primeNumber);
             
@@ -31,9 +31,7 @@ namespace PrimeLoadBalancer.Controllers
         [HttpPost("CountPrimes")]
         public async Task<ActionResult<List<string>>> CountPrimesAsync([FromBody] PrimeNumbersDTO primeNumber)
         {
-            var startNumber = primeNumber.StartNumber;
-            var endNumber = primeNumber.EndNumber; 
-            var result = await _loadBalancerService.CountPrimes(startNumber, endNumber);
+            var result = await _loadBalancerService.CountPrimes(primeNumber);
 
             return Ok(result);
         }
