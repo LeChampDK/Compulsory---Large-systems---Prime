@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using PrimeLoadBalancer.Model;
 
 namespace PrimeLoadBalancer.Service
@@ -20,8 +21,10 @@ namespace PrimeLoadBalancer.Service
             httpClient = new HttpClient();
         }
 
-        public async Task<bool> IsPrime(PrimeNumberDTO primeNumber)
+        public async Task<ResponseBodyPrimeNumber> IsPrime(PrimeNumberDTO primeNumber)
         {
+            var startTime = DateTime.Now;
+
             var connString = giveMeConfig();
             connString = connString + "IsItPrime/";
             var request = new StringContent(JsonConvert.SerializeObject(primeNumber), Encoding.UTF8, "application/json");
@@ -30,12 +33,25 @@ namespace PrimeLoadBalancer.Service
             var responseContent = await response.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<bool>(responseContent);
 
-            //return responseContent;
-            return result;
+            var endTime = DateTime.Now;
+            var timespan = endTime - startTime;
+
+            var resultbody = new ResponseBodyPrimeNumber()
+            {
+                ConnString = connString,
+                StartTime = startTime,
+                EndTime = endTime,
+                TimeUsed = timespan.ToString(@"hh\:mm\:ss\:fff"),
+                Result = result
+            };
+
+            return resultbody;
         }
 
-        public async Task<List<string>> CountPrimes(PrimeNumbersDTO primeNumbers)
+        public async Task<ResponseBodyPrimeNumbers> CountPrimes(PrimeNumbersDTO primeNumbers)
         {
+            var startTime = DateTime.Now;
+
             var connString = giveMeConfig();
             connString = connString + "CountPrimes/";
             var request = new StringContent(JsonConvert.SerializeObject(primeNumbers), Encoding.UTF8, "application/json");
@@ -43,7 +59,19 @@ namespace PrimeLoadBalancer.Service
             var responseContent = await response.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<List<string>>(responseContent);
 
-            return result;
+            var endTime = DateTime.Now;
+            var timespan = endTime - startTime;
+
+            var resultbody = new ResponseBodyPrimeNumbers()
+            {
+                ConnString = connString,
+                StartTime = startTime,
+                EndTime = endTime,
+                TimeUsed = timespan.ToString(@"hh\:mm\:ss\:fff"),
+                Result = result.ToArray()
+            };
+
+            return resultbody;
         }
 
         private string giveMeConfig()

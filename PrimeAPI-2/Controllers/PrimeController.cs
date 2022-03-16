@@ -26,13 +26,13 @@ namespace PrimeAPI_2.Controllers
         }
 
         [HttpPost("CountPrimes")]
-        public ActionResult<List<string>> CountPrimes([FromBody] PrimeNumbers primeNumbers)
+        public List<string> CountPrimes([FromBody] PrimeNumbers primeNumbers)
         {
             var startNumber = primeNumbers.StartNumber;
             var endNumber = primeNumbers.EndNumber;
             var result = _primeService.CountPrimes(startNumber, endNumber);
 
-            return Ok(result);
+            return result;
         }
     }
 }

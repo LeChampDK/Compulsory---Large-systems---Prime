@@ -32,8 +32,10 @@ namespace PrimeLoadBalancer
             services.AddSingleton<LoadBalancerService>();
             services.AddSingleton<ConfigService>();
 
-            services.AddControllers().AddJsonOptions(x =>
-               x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+            services.AddControllers();
+               // .AddJsonOptions(x =>
+               //x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+
 
             services.AddSwaggerGen(c =>
             {
